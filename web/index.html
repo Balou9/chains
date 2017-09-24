@@ -4,23 +4,52 @@
     <meta charset="utf-8">
     <title>chain</title>
      <script>
-     'use strict'
+        'use strict'
+        // chain factory
+        function makeChain() {
+          const chain = document.createElement('div')
+          const container = document.createElement('div')
+          // chain styling
+          chain.style.backgroundColor = '#FFD000'
+          chain.style.width = '40px'
+          chain.style.height = '40px'
+          chain.style.position = 'absolute'
+          // container styling
+          container.style.width = '400px'
+          container.style.height = '400px'
+          container.style.backgroundColor = 'yellow'
+          // make it fall down the screen
+          //functon falldown(){
 
-        function chainrain(){
+          //}
+         // register a click handler for the new eleemnt
+          chain.onclick = e => {
+          console.log('it should be raining')
+        }
+          // return
+          return chain
+        }
+        // chainrain function
+        function chainrain() {
 
         const body = document.querySelector('body')
-
-        const button = document.createElement("button")
-        document.getElementById('button').addEventListener("click"); function(){
-                alert("Make it rain!")
+        const button = document.createElement('button')
+        // button styling
+        button.style.positon = 'fixed'
+        button.style.float ='right'
+        button.innerText = 'make it chain rain!'
+        button.onclick = e => {
+              //console.log(e)
+          // create a new Chain element
+          body.appendChild(makeChain())
         }
-        body.appendchild(button);
+        body.appendChild(button)
       }
-
-      window.onload = () => chainrain
-      </script>
+      window.onload = chainrain
+      // window.onload = () => chainrain()
+      // window.onload = function() {chainrain()}
+    </script>
   </head>
   <body>
-
   </body>
 </html>
