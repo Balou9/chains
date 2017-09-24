@@ -4,16 +4,20 @@
     <meta charset="utf-8">
     <title>chain</title>
      <script>
+     'use strict';
 
-      function chainrain(e){
-        const button = document.createElement("button");
-        document.body.appendChild(button);
+        function chainrain(){
+
+        const body = document.querySelector('body')
+        
+        const button = document.createElement("button")
         document.getElementById('button').addEventListener("click"); function(){
+                alert("Make it rain!")
         }
+        body.appendchild(button);
       }
 
-        window.onload = chainrain
-
+      window.onload = () => chainrain
       </script>
   </head>
   <body>
