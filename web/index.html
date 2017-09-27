@@ -5,7 +5,7 @@
     <title>chain</title>
      <script>
         'use strict'
-        // chain factory
+          // chain factory
         function makeChain() {
           const chain = document.createElement('div')
           const container = document.createElement('div')
@@ -13,24 +13,29 @@
           chain.style.backgroundColor = '#FFD000'
           chain.style.width = '40px'
           chain.style.height = '40px'
-          chain.style.position = 'absolute'
+          chain.style.position = 'relative'
           // container styling
           container.style.width = '400px'
           container.style.height = '400px'
           // make it fall down the screen
-          //functon falldown(){
-
-          //}
+        function fall() {
+          const pos = 0
+          pos++
+          // keyframes
+          chain.animate([
+            {top: pos, left: pos},
+            {top: pos + 'px', left: pos + 'px'}])
+          // options
+        }
          // register a click handler for the new eleemnt
           chain.onclick = e => {
-          console.log('it should be raining')
+          body.appendChild(fall())
         }
           // return
           return chain
         }
         // chainrain function
         function chainrain() {
-
         const body = document.querySelector('body')
         const button = document.createElement('button')
         // button styling
@@ -38,7 +43,7 @@
         button.style.float ='right'
         button.innerText = 'make it chain rain!'
         button.onclick = e => {
-              //console.log(e)
+          //console.log(e)
           // create a new Chain element
           body.appendChild(makeChain())
         }
